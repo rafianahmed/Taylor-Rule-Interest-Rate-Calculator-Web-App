@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taylor Rule Monetary Policy Model</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <header>
+        <h1>Taylor Rule Model</h1>
+        <p>Monetary Policy Rate Estimation Framework</p>
+    </header>
+
+    <section class="card">
+
+        <div class="formula">
+            i = r* + π + 0.5(π − π*) + 0.5(y − y*)
+        </div>
+
+        <div class="grid">
+
+            <div class="input-box">
+                <label>Inflation (π %)</label>
+                <input type="number" id="inflation" step="0.01" placeholder="e.g. 3.2">
+            </div>
+
+            <div class="input-box">
+                <label>Target Inflation (π* %)</label>
+                <input type="number" id="targetInflation" step="0.01" placeholder="e.g. 2">
+            </div>
+
+            <div class="input-box">
+                <label>Output Gap (%)</label>
+                <input type="number" id="outputGap" step="0.01" placeholder="e.g. -1.5">
+            </div>
+
+            <div class="input-box">
+                <label>Neutral Rate (r* %)</label>
+                <input type="number" id="neutralRate" step="0.01" value="2">
+            </div>
+
+        </div>
+
+        <button onclick="calculateTaylor()">Calculate Policy Rate</button>
+
+        <div class="output-card">
+            <div id="result" class="rate-display">—</div>
+            <div id="policy" class="policy-comment"></div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Developed for macroeconomic policy analysis</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
